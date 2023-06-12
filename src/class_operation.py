@@ -1,5 +1,5 @@
 from operator import itemgetter
-
+from datetime import datetime
 
 class Operation:
     def __init__(self, list_operation):
@@ -25,3 +25,13 @@ class Operation:
             else:
                 break
         return list_last_five_operation
+
+    def date_operation(self, dict_operation):
+        """
+        date_operation - из полученного словаря получает строку по ключу 'date'
+        и возвращает дату в формате: ДД.ММ.ГГГГ
+        :param dict_operation: словарь операции
+        :return: дата в формате ДД.ММ.ГГГГ
+        """
+        date_operation = datetime.datetime.strptime(dict_operation['date'], "%Y-%b-%dT%H:%M:%S.%f")
+        return f'{date_operation.day}.{date_operation.month}.{date_operation.year}'
