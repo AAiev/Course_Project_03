@@ -1,4 +1,3 @@
-import unittest
 from src.class_operation import Operation
 test_dict_operation = {'date': '2019-12-08T22:46:21.935582',
   'description': 'Открытие вклада',
@@ -7,14 +6,14 @@ test_dict_operation = {'date': '2019-12-08T22:46:21.935582',
                       'currency': {'code': 'USD', 'name': 'USD'}},
   'state': 'EXECUTED',
   'to': 'Счет 90424923579946435907'}
+test_operation = Operation(test_dict_operation)
 
 
-class TestOperation(unittest.TestCase):
-    def setUp(self):
-        self.operation = Operation()
+def test_date_operation():
+    assert test_operation.date_operation() == '08.12.2019'
 
-    def test_date_operation(self):
-        self.assertEqual(self.operation.date_operation(test_dict_operation), "08.12.2019")
+def test_title_operation():
+    assert test_operation.title_operation() == 'Открытие вклада'
 
 
 
