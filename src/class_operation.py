@@ -8,9 +8,7 @@ class Operation:
 
     def date_operation(self):
         """
-        date_operation - из полученного словаря получает строку по ключу 'date'
-        и возвращает дату в формате: ДД.ММ.ГГГГ
-        :param dict_operation: словарь операции
+        возвращает дату в формате: ДД.ММ.ГГГГ
         :return: дата в формате ДД.ММ.ГГГГ
         """
         date_operation_year = self.dict_operation['date'][0:4]
@@ -18,4 +16,8 @@ class Operation:
         date_operation_day = self.dict_operation['date'][8:10]
         return f'{date_operation_day}.{date_operation_month}.{date_operation_year}'
 
-
+    def title_operation(self):
+        """
+        возвращает название операции
+        """
+        return self.dict_operation['description']
