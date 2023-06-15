@@ -76,7 +76,7 @@ class Operation:
 
     def amount_operation(self):
         """
-        возвращает сумму операции
+        возвращает сумму операции и валюту
         """
         return f"{self.dict_operation['operationAmount']['amount']} {self.dict_operation['operationAmount']['currency']['name']}"
 
