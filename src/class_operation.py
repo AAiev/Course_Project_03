@@ -74,3 +74,9 @@ class Operation:
         else:
             return f"{str_not_digit} {''.join(digit_str[0:])}"
 
+    def amount_operation(self):
+        """
+        возвращает сумму операции
+        """
+        return f"{self.dict_operation['operationAmount']['amount']} {self.dict_operation['operationAmount']['currency']['name']}"
+
