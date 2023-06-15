@@ -28,3 +28,8 @@ def five_last_successful_operations(list_operation):
         else:
             break
     return list_last_five_operation
+
+
+title_from = 'ssdfsdfsdf999'
+sum_digit_in_str = sum(1 for i in title_from if i.isdigit())
+print(sum_digit_in_str)
